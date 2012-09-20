@@ -239,7 +239,7 @@ Now it says we have to have `root_url` defined. But we've got a problem, we don'
 
     $ rails generate controller pages
 
-For rails all, models are singular and controllers are plural. FYI - if you mess this up you can always reverse a generation by running `destroy` and trying again `$ rails destroy controller pages`, but don't run that - it will erase our controller.
+For rails all models are singular and controllers are plural. FYI - if you mess this up you can always reverse a generation by running `destroy` and trying again `$ rails destroy controller pages`, but don't run that - it will erase our controller.
 
 
 Now we've got a controller in `app/controllers/pages_controller.rb`, if you're making your own, it should look like this:
