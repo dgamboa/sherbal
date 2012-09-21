@@ -547,7 +547,7 @@ To go back one step or:
 
 to go back two steps.
 
-Once you've got a working migration it is much easier to add a new migration then to edit an old one. If you've committed a migration to source control you should not modify it unless there is a really good reason. New migrations are easy to make just run `$ rails generate migration ...`
+Once you've got a working migration it is much easier to add a new migration than to edit an old one. If you've committed a migration to source control you should not modify it unless there is a really good reason. New migrations are easy to make just run `$ rails generate migration ...`
 
 Once you've got the title attribute in your links table, add `attr_accessors` until this works in your rails console:
 
