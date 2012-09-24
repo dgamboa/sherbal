@@ -525,7 +525,7 @@ Generate a controller for votes. For now it only needs a `create` action. It sho
 Now we've got a model, a controller, routes but no view. Back to our user story:
 
     "A logged in user visits the home page, sees a user submitted link and votes on it.
-     The user should end up on the home page and the vote count should change up or down
+       The user should end up on the home page and the vote ount should change up or down
      according to how they voted"
 
 
