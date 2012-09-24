@@ -233,7 +233,7 @@ Based on this, we can construct a comment based on a user supplied `:user_id`, `
 
 A malicious user could edit our html to change that value from 9 to an arbitrary `user_id`. This means that anyone could post a comment as any other user. To get around this we can use devise to make sure a user is logged in when hitting our controller action and then we can use our `current_user` variable to make sure only the currently logged in user is making comments that are tied to their own account.
 
-Looking at the the [Devise Docs](https://github.com/plataformatec/devise/) you will find that we can require a user to be logged in by adding this in our controller:
+Looking at the [Devise Docs](https://github.com/plataformatec/devise/) you will find that we can require a user to be logged in by adding this in our controller:
 
     before_filter :authenticate_user!
 
