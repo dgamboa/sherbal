@@ -592,7 +592,7 @@ Now if we refresh the page we can see the vote count that a link has on it! Go a
 It looks like everything is in good working order, but if you played around with our  voting feature you may have noticed that you can vote a link up once and only once. Our app doesn't have the same restriction, so one user could rig the vote. Before we fix this lets take a second to meditate on how this will affect users by writing another user story.
 
     "A logged in user that votes for a link cannot vote for the same link in the same
-     direction. A logged in user can see that which links they have voted for and in which
+     direction. A logged in user can see which links they have voted for and in which
      direction up/down"
 
 ## Vote Validations
