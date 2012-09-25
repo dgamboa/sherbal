@@ -3,12 +3,12 @@
 <ul>
   <% @links.each do |link| %>
   	<li><%= link_to link.title, link.url %>
-  			<% if current_user.votes.where(:link_id => link.id, :up => true).present? %>
+  			<% if current_user && current_user.votes.where(:link_id => link.id, :up => true).present? %>
   				*
   			<% else %>
   				<%= link_to "+", votes_path(:vote => {:link_id => link.id, :up => true}), :method => :post %>
   			<% end %>
-  			<% if current_user.votes.where(:link_id => link.id, :up => false).present? %>
+  			<% if current_user && current_user.votes.where(:link_id => link.id, :up => false).present? %>
   				*
   			<% else %>
   				<%= link_to "-", votes_path(:vote => {:link_id => link.id, :up => false}), :method => :post %>
