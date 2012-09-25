@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RedditOnRails</title>
+  <title>SherBal</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<div>
+	<div class="nav">
+		<%= link_to 'Home', root_path %>
+	</div>
+	<%# user is logged in, show log out link %>
+	<% if current_user.present? %>
+		<div class="nav">
+			<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+		</div>
+	<%# user is not logged in, show singup and login links %>
+	<% else %>
+		<div class="nav">
+			<%= link_to 'Sign In', new_user_session_path %>
+		</div>
+		<div class="nav">
+			<%= link_to 'Register Now!', new_user_registration_path %>
+		</div>	
+	<% end %>
+</div>
 
-<%= link_to 'Home', root_path %>
+<div>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+</div>
 
-<%# user is logged in, show log out link %>
-<% if current_user.present? %>
-	<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
-<%# user is not logged in, show singup and login links %>
-<% else %>
-	<%= link_to 'Sign In', new_user_session_path %> |
-	<%= link_to 'Register Now!', new_user_registration_path %>
-<% end %>
-
-<%= yield %>
+<div>
+	<%= yield %>
+</div>
 
 </body>
 </html>
