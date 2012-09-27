@@ -1,21 +1,48 @@
-<h2>SherBal</h2>
-<h4>Share your badass links!</h4>
-<%= link_to "Add a link", new_link_path %>
-<ul>
-  <% @links.each do |link| %>
-  	<li class="link"><%= link_to link.title, link.url %>
-  			<% if current_user && current_user.votes.where(:link_id => link.id, :up => true).present? %>
-  				*
-  			<% else %>
-  				<%= link_to "+", votes_path(:vote => {:link_id => link.id, :up => true}), :method => :post %>
-  			<% end %>
-  			<% if current_user && current_user.votes.where(:link_id => link.id, :up => false).present? %>
-  				*
-  			<% else %>
-  				<%= link_to "-", votes_path(:vote => {:link_id => link.id, :up => false}), :method => :post %>
-  			<% end %></li>
-  			Votes: <%= link.votes.where(:up=> true).count - link.votes.where(:up=> false).count %>
-  			<%= link_to "comments", link %>
+<div class="center hero-unit">
+  <h1>Welcome to SherBAL</h1>
+
+  <h2>
+    What awesome links have you found today?
+  </h2>
+
+  <% if current_user.present? %>
+    <%= link_to "Share a link!",  new_link_path, class: "btn btn-large btn-primary" %>
+  <% else %>
+    <%= link_to "Sign up Now!",   new_user_registration_path, class: "btn btn-large btn-primary" %>
   <% end %>
-</ul>
-<%= will_paginate(@links) %>
+</div>
+
+<div class="center logo-home">
+  <%= link_to image_tag("sherbal_logo.png", alt: "SherBal", height: "80px"), root_path %>
+</div>
+
+<div class="custom_alert">
+  <%= notice %>
+  <%= alert %>
+</div>
+
+<div>
+  <ul class="unstyled">
+    <% @links.each do |link| %>
+      <li class="links_display">
+        <%= link_to link.title, link.url %>
+          <% if current_user && current_user.votes.where(:link_id => link.id, :up => true).present? %>
+            *
+          <% else %>
+            <%= link_to "+", votes_path(:vote => {:link_id => link.id, :up => true}), :method => :post %>
+          <% end %>
+          <% if current_user && current_user.votes.where(:link_id => link.id, :up => false).present? %>
+            *
+          <% else %>
+            <%= link_to "-", votes_path(:vote => {:link_id => link.id, :up => false}), :method => :post %>
+          <% end %>
+      </li>
+          Votes: <%= link.votes.where(:up=> true).count - link.votes.where(:up=> false).count %>
+          <%= link_to "comments", link %>
+          <p></p>
+    <% end %>
+  </ul>
+</div>
+<div>
+  <%= will_paginate(@links) %>
+</div>

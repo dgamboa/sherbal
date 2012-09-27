@@ -1,0 +1,152 @@
+/*$navbarBackground: #000050;
+$navbarBackgroundHighlight: #000060;
+$navbarLinkColor: #007000;
+$btnPrimaryBackground: #000058;
+$btnPrimaryBackgroundHighlight: #000068;
+$linkColor: #006000;*/
+@import "bootstrap";
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+	h1 {
+		margin-bottom: 10px;
+	}
+}
+
+.logo-home {
+	margin-bottom: 30px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  font-weight: 100;
+  color: $grayLight;
+}
+
+h3 {
+  font-size: 1.7em;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+	display: block;
+  float: left;
+  padding: 10px 20px 10px;
+  margin-left: -20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+  text-shadow: 0 1px 0 #505050;
+  letter-spacing: 3px;
+  &:hover {
+		color: #fff;
+  	text-decoration: none;
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: $grayLight;
+  a {
+  	color: #555;
+  	&:hover {
+  		color: #222;
+  	}
+  }
+  small {
+  	float: left;
+  }
+  ul {
+  	float: right;
+  	list-style: none;
+  	li {
+  		float: left;
+  		margin-left: 10px;
+  	}
+  }
+}
+
+/* links */
+
+.links_display {
+	background-color: $grayLighter;
+	border-radius: 4px;
+}
+
+.showLink {
+	text-align: left;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.comment {
+	margin-bottom: 3px;
+	color: #707070;
+}
+
+.comment_time {
+	font-size: 10px;
+	font-style: italic;
+	margin-bottom: 20px;
+	color: #808080;
+}
+
+.custom_alert {
+  background-color: #fcf8e3;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  color: #c09853;
+}
+
+/* comments */
+
+textarea {
+  height: 100px;
+  width: 450px;
+}
