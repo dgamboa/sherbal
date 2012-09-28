@@ -4,13 +4,8 @@
   </small>
   <nav>
     <ul>
-      <% if current_user.present? %>
-        <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-      <% else %>
-        <li><%= link_to "Sign in",  new_user_session_path %></li>
-      <% end %>
-        <li><%= link_to "About", '#' %></li>
-        <li><%= link_to "Contact", '#' %></li>
+      <li><%= link_to "About", about_index_path %></li>
+      <li><%= link_to "Contact", contact_index_path %></li>
     </ul>
   </nav>
 </footer>

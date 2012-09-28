@@ -14,6 +14,11 @@ RedditOnRails::Application.routes.draw do
   resources :about
   resources :contact
   root :to => "pages#index"
+
+  devise_scope :user do 
+    match 'users/sign_out' => 'devise/sessions#destroy' 
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

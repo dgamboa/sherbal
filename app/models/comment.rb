@@ -3,4 +3,6 @@ class Comment < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :link
+
+  validates :message, :length => { :minimum => 1 }
 end

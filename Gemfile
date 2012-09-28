@@ -7,6 +7,7 @@ gem 'bootstrap-sass', '2.0.4'
 
 gem 'devise'
 gem 'will_paginate', '~> 3.0'
+gem 'bootstrap-will_paginate', '0.0.6'
 
 # Gems used only for assets and not required
 # in production environments by default.
