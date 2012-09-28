@@ -1,12 +1,15 @@
 <h3>
-  <b>Title:</b>
 	<%= @link.title %>
 </h3>
 
 <h3>
-	<b>Link:</b>
 	<%= link_to @link.url, @link.url %>
 </h3>
+
+<p class="traffic_data">
+  <%= @link.votes.where(:up => true).count - @link.votes.where(:up => false).count %> votes by 
+  <%= User.find(@link.user_id).email %>
+</p>
 
 <h2 class="showLink comments">Comments:</h2>
 <div>

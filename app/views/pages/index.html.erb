@@ -12,7 +12,6 @@
   <% else %>
     <%= link_to "Sign up Now!",   new_user_registration_path, class: "btn btn-large btn-primary" %>
   <% end %>
-
 </div>
 
 <div class="custom_alert">
@@ -28,21 +27,18 @@
   <ul class="unstyled">
     <% @links.each do |link| %>
       <li class="links_display">
-        <%= link_to link.title, link.url %>
           <% if current_user && current_user.votes.where(:link_id => link.id, :up => true).present? %>
             *
           <% else %>
             <%= link_to "+", votes_path(:vote => {:link_id => link.id, :up => true}), :method => :post %>
           <% end %>
-          <% if current_user && current_user.votes.where(:link_id => link.id, :up => false).present? %>
-            *
-          <% else %>
-            <%= link_to "-", votes_path(:vote => {:link_id => link.id, :up => false}), :method => :post %>
-          <% end %>
+          <%= link_to link.title, link.url %>
       </li>
-          Votes: <%= link.votes.where(:up => true).count - link.votes.where(:up=> false).count %>
-          <%= link_to "comments", link %>
-          <p></p>
+      <li class="traffic_data">
+          <%= link.votes.where(:up => true).count - link.votes.where(:up => false).count %> votes | 
+          <%= link_to "#{link.comments.count} comments", link %>
+      <li>
+      <p></p>
     <% end %>
   </ul>
 </div>
