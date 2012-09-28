@@ -10,7 +10,7 @@ RedditOnRails::Application.routes.draw do
   resources :pages
   resources :links
   resources :comments
-  resources :votes
+  resources :votes, :only => [:create]
   resources :about
   resources :contact
   root :to => "pages#index"

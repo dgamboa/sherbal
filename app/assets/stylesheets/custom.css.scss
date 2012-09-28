@@ -119,6 +119,7 @@ footer {
 	border-radius: 4px;
   color: $grayLight;
   font-size: 11px;
+  padding-left: 5px;
   a {
     line-height: 25px;
     margin-left: 5px;
@@ -165,4 +166,22 @@ footer {
 textarea {
   height: 100px;
   width: 450px;
+}
+
+/* upvote button */
+
+.upvote {
+  border: none;
+  float: left;
+  color: $linkColor;
+  background-color: transparent;
+  border-radius: 3px;
+  &:hover {
+    color: darken($linkColor, 15%);
+  }
+}
+
+.cant_vote_again {
+  padding-left: 8px;
+  padding-right: 5px;
 }
