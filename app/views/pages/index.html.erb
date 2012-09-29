@@ -33,7 +33,7 @@
       <li class="traffic_data">
           <%= link.votes.where(:up => true).count - link.votes.where(:up => false).count %> votes | 
           <%= link_to "#{link.comments.count} comments", link %>
-      <li>
+      </li>
     <% end %>
   </ul>
 </div>
