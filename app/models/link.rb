@@ -6,5 +6,5 @@ class Link < ActiveRecord::Base
   has_many :votes
 
   validates :title, :length => { :minimum => 6 }
-  validates :url, 	:length => { :minimum => 6 }
+  validates :url, 	:length => { :minimum => 6 }, :uniqueness => true
 end
