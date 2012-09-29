@@ -18,6 +18,13 @@ textarea {
   resize: vertical;
 }
 
+p {
+  width: 400px;
+  a:hover {
+    text-decoration: none;
+  }
+}
+
 .center {
   text-align: center;
 	height: 200px;
