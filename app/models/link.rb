@@ -4,4 +4,7 @@ class Link < ActiveRecord::Base
   belongs_to :user
   has_many :comments
   has_many :votes
+
+  validates :title, :length => { :minimum => 6 }
+  validates :url, 	:length => { :minimum => 6 }
 end
