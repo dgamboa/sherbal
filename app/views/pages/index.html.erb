@@ -24,7 +24,7 @@
     <% @links.each do |link| %>
       <li class="links_display">
           <% if current_user && current_user.votes.where(:link_id => link.id, :up => true).present? %>
-            <em class="cant_vote_again">*</em>
+            <%= button_to "-", votes_path(:vote => {:link_id => link.id, :up => nil}), class: "upvote" %>
           <% else %>
             <%= button_to "+", votes_path(:vote => {:link_id => link.id, :up => true}), class: "upvote" %>
           <% end %>
