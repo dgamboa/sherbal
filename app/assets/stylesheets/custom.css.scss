@@ -26,7 +26,9 @@ textarea {
 
 .center {
   text-align: center;
-	h1 {
+	height: 200px;
+  padding-top: 30px;
+  h1 {
 		margin-bottom: 10px;
 	}
 }
@@ -114,9 +116,15 @@ footer {
 
 /* links */
 
+.links_list {
+  background-color: $grayLighter;
+  border-radius: 6px;
+}
+
 .links_display {
-	background-color: $grayLighter;
-	border-radius: 4px;
+  box-shadow: 0 1.3px 1px #bbb;
+  background-color: white;
+  border-radius: 3px;
   color: $grayLight;
   font-size: 11px;
   padding-left: 5px;
@@ -130,7 +138,7 @@ footer {
   }
 }
 
-.showLink {
+.show_link {
 	text-align: left;
 	margin-top: 40px;
 	margin-bottom: 20px;
@@ -139,6 +147,7 @@ footer {
 .comment {
 	margin-bottom: 3px;
 	color: #707070;
+  text-decoration: none;
 }
 
 .comment_time {
@@ -159,6 +168,9 @@ footer {
 .traffic_data {
   font-size: 11px;
   margin-left: 5px;
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 /* comments */

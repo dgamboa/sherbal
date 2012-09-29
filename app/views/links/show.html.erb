@@ -11,7 +11,7 @@
   <%= User.find(@link.user_id).email %>
 </p>
 
-<h2 class="showLink comments">Comments:</h2>
+<h2 class="show_link comments">Comments:</h2>
 <div>
 	<% @link.comments.each do |comment| %>
 		<p class="comment"><%= comment.message %></p>

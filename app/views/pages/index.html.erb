@@ -19,11 +19,7 @@
   <%= alert %>
 </div>
 
-<div class="pagination">
-  <%= will_paginate @links %>
-</div>
-
-<div>
+<div class="links_list">
   <ul class="unstyled">
     <% @links.each do |link| %>
       <li class="links_display">
@@ -38,7 +34,6 @@
           <%= link.votes.where(:up => true).count - link.votes.where(:up => false).count %> votes | 
           <%= link_to "#{link.comments.count} comments", link %>
       <li>
-      <p></p>
     <% end %>
   </ul>
 </div>
