@@ -7,7 +7,7 @@
 </h3>
 
 <p class="traffic_data">
-  <%= @link.votes.where(:up => true).count - @link.votes.where(:up => false).count %> votes by 
+  <%= pluralize(@link.votes.where(:up => true).count, "vote") %> by 
   <%= User.find(@link.user_id).email %>
 </p>
 

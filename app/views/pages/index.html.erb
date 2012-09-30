@@ -32,8 +32,8 @@
             <%= link_to link.title, link.url %>
         </li>
         <li class="traffic_data">
-            <%= link.votes.where(:up => true).count - link.votes.where(:up => false).count %> votes | 
-            <%= link_to "#{link.comments.count} comments", link %>
+            <%= pluralize(link.votes.where(:up => true).count, "vote") %> | 
+            <%= link_to "#{pluralize(link.comments.count, "comment")}", link %>
         </li>
       <% end %>
     </ul>
