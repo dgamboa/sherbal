@@ -157,6 +157,11 @@ footer {
   text-decoration: none;
 }
 
+.comment_title {
+  margin-bottom: 20px;
+  margin-top: 70px;
+}
+
 .comment_time {
 	font-size: 10px;
 	font-style: italic;
@@ -173,11 +178,39 @@ footer {
 }
 
 .traffic_data {
+  float: left;
   font-size: 11px;
   margin-left: 5px;
   a:hover {
     text-decoration: none;
   }
+}
+
+.delete_link {
+  margin-top: -2px;
+  font-size: 11px;
+  border: none;
+  color: $linkColor;
+  background-color: transparent;
+  &:hover {
+    color: darken($linkColor, 15%);
+  }
+}
+
+.delete_link_comment {
+  font-size: 10px;
+  font-style: italic;
+  margin-bottom: 20px;
+  color: $linkColor;
+  border: none;
+  background-color: transparent;
+/*  margin-top: -2px;
+  
+  
+  
+  &:hover {
+    color: darken($linkColor, 15%);
+  }*/
 }
 
 /* comments */

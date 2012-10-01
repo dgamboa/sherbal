@@ -1,4 +1,18 @@
 class LinksController < ApplicationController
+  before_filter :get_post, :only => [:show, :edit, :update, :destroy]
+  before_filter :check_user, :only => [:edit,:update,:destroy]
+
+  def check_user
+    if current_user.id != @link.user_id
+      flash[:notice] = "Sorry, you can't edit someone else's post"
+      redirect_to link_path
+    end
+  end
+
+  def get_post
+    @link = Link.find(params[:id])
+  end
+
   def show
   	@link = Link.find(params[:id])
   	@comment = Comment.new
@@ -20,5 +34,10 @@ class LinksController < ApplicationController
         format.json { render json: @link.errors, status: :unprocessable_entity }
       end
 		end
+  end
+
+  def destroy
+    Link.find(params[:id]).destroy
+    redirect_to root_url
   end
 end

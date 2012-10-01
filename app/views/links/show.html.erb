@@ -6,17 +6,27 @@
 	<%= link_to @link.url, @link.url %>
 </h3>
 
-<p class="traffic_data">
-  <%= pluralize(@link.votes.where(:up => true).count, "vote") %> by 
-  <%= User.find(@link.user_id).email %>
-</p>
+<ul class="unstyled">
+  <li class="traffic_data">
+    <%= pluralize(@link.votes.where(:up => true).count, "vote") %> by 
+    <%= User.find(@link.user_id).email %>
+  </li>
+  <li>
+    <% if current_user.id == @link.user_id %>
+      <%= button_to "| delete", link_path, :method => :delete, class: "delete_link" %>
+    <% end %>
+  </li>
+</ul>
 
-<h2 class="show_link comments">Comments:</h2>
+<h2 class="show_link comment comment_title">Comments:</h2>
 <div>
 	<% @link.comments.each do |comment| %>
 		<p class="comment"><%= comment.message %></p>
 		<p class="comment_time">posted <%= time_ago_in_words(comment.created_at) %> ago by <%= User.find(comment.user_id).email %></p>
-	<% end %>
+    <% if current_user.id == comment.user_id %>
+      <%= button_to "| delete", comment_path, :method => :delete, class: "delete_link_comment" %>
+    <% end %>
+  <% end %>
 </div>
 
 <%= form_for(@comment) do |f| %>
