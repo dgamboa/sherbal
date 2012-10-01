@@ -7,8 +7,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-  	@comment = Comment.find(params[:id])
-  	@comment.destroy
-  	redirect_to link_path, :notice => "Comment successfully deleted"
+  	Comment.find(params[:id]).destroy
+  	redirect_to :back, :notice => "Comment successfully deleted"
   end
 end

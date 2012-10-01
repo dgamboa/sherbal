@@ -151,6 +151,7 @@ footer {
 }
 
 .comment {
+  clear: both;
   width: 900px;
 	margin-bottom: 3px;
 	color: #707070;
@@ -163,6 +164,7 @@ footer {
 }
 
 .comment_time {
+  float: left;
 	font-size: 10px;
 	font-style: italic;
 	margin-bottom: 20px;
@@ -200,17 +202,17 @@ footer {
 .delete_link_comment {
   font-size: 10px;
   font-style: italic;
-  margin-bottom: 20px;
   color: $linkColor;
   border: none;
   background-color: transparent;
-/*  margin-top: -2px;
-  
-  
-  
+  margin-top: -2px;
   &:hover {
     color: darken($linkColor, 15%);
-  }*/
+  }
+}
+
+.add_comment {
+  clear: both;
 }
 
 /* comments */
