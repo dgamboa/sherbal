@@ -12,8 +12,10 @@
     <%= User.find(@link.user_id).email %>
   </li>
   <li>
-    <% if current_user.id == @link.user_id %>
-      <%= button_to "| delete", link_path, :method => :delete, class: "delete_link" %>
+    <% if current_user %>
+      <% if current_user.id == @link.user_id %>
+        <%= button_to "| delete", link_path, :method => :delete, class: "delete_link" %>
+      <% end %>
     <% end %>
   </li>
 </ul>
