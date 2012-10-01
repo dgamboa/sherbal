@@ -29,7 +29,7 @@
             <% else %>
               <%= button_to "+", votes_path(:vote => {:link_id => link.id, :up => true}), class: "upvote" %>
             <% end %>
-            <%= link_to link.title, link.url %>
+            <%= link_to link.title, link.url, target: "_blank" %>
         </li>
         <li class="traffic_data">
             <%= pluralize(link.votes.where(:up => true).count, "vote") %> | 
