@@ -1,24 +1,22 @@
 <div class="links_background">
-  <div class="center hero-unit">
-    <%= link_to image_tag("sherbal_logo.png", alt: "SherBal", height: "80px"), root_path %>
+  <% if current_user.present? %>
+    <div class="center hero-unit">
+      <%= link_to image_tag("sherbal_logo.png", alt: "SherBal", height: "80px"), root_path %>
 
-    <h1>Welcome to SherBAL</h1>
+      <h1>Welcome to SherBAL</h1>
 
-    <h2>
-      What awesome links have you found today?
-    </h2>
+      <h2>
+        What awesome links have you found today?
+      </h2>
 
-    <% if current_user.present? %>
-      <%= link_to "Share a link!",  new_link_path, class: "btn btn-large btn-primary" %>
-    <% else %>
       <%= link_to "Sign up Now!",   new_user_registration_path, class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
-  <div class="custom_alert">
-    <%= notice %>
-    <%= alert %>
-  </div>
+    <div class="custom_alert">
+      <%= notice %>
+      <%= alert %>
+    </div>
 
   <div class="links_list">
     <ul class="unstyled">
@@ -32,7 +30,7 @@
             <%= link_to link.title, link.url, target: "_blank" %>
         </li>
         <li class="traffic_data">
-            <%= pluralize(link.votes.where(:up => true).count, "vote") %> | 
+            <%= pluralize(link.votes.where(:up => true).count, "vote") %> |
             <%= link_to "#{pluralize(link.comments.count, "comment")}", link %>
         </li>
       <% end %>
