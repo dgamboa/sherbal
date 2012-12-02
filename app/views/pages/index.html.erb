@@ -1,5 +1,5 @@
 <div class="links_background">
-  <% if current_user.present? %>
+  <% unless current_user.present? %>
     <div class="center hero-unit">
       <%= link_to image_tag("sherbal_logo.png", alt: "SherBal", height: "80px"), root_path %>
 
