@@ -5,7 +5,7 @@ I wrote this application using the [Richard Schneeman](http://schneems.com/) [*U
 
 Check out the application [here](http://sherbal.herokuapp.com).
 
-To Do:
+### To Do:
 1. Sort links by number of votes
 2. Create another page where links are sorted by date created
 3. Allow users to share links on Facebook and Twitter
